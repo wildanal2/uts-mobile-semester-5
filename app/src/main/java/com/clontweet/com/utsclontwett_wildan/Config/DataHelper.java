@@ -1,4 +1,4 @@
-package com.clontweet.com.utsclontwett_wildan;
+package com.clontweet.com.utsclontwett_wildan.Config;
 
 import android.content.ContentValues;
 import android.content.Context;

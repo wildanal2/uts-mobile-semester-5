@@ -1,6 +1,8 @@
 package com.clontweet.com.utsclontwett_wildan;
 
-public class Post {
+import java.util.ArrayList;
+
+public class Post extends ArrayList<Post> {
     String uname,tgl,status,img;
 
     public Post(String uname, String tgl, String status, String img) {
