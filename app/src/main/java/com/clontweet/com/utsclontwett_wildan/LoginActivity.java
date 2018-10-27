@@ -60,7 +60,7 @@ public class LoginActivity extends Activity {
                 if (chklogin==true){
                     Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                    i.putExtra("username",uname);
+//                    i.putExtra("username",uname);
                     startActivity(i);
                 }else {
                     Toast.makeText(getApplicationContext(),"Anda belum terdaftar",Toast.LENGTH_SHORT).show();
