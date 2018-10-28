@@ -28,20 +28,27 @@ public class RegisterActivity extends Activity {
         final EditText et_email = findViewById(R.id.et_email_reg);
         final EditText et_pwd = findViewById(R.id.et_pwd_reg);
         Button btn_singup = findViewById(R.id.btn_singup);
+        Button btn_back = findViewById(R.id.btn_back_tweet);
 
         btn_singup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = dbb.getWritableDatabase();
-                db.execSQL("insert into user(username,email,password) values('" +
+                db.execSQL("insert into user(username,email,password,img_profil) values('" +
                         et_uname.getText().toString() + "','" +
                         et_email.getText().toString() + "','" +
-                        et_pwd.getText().toString() + "')");
+                        et_pwd.getText().toString() + "','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsYBbiqLu9lXhe0ZCrjht08aRU1ZqHSMiYnLUnu4RdLO_L_vW_')");
 
                 Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(i);
+                finish();
+            }
+        });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

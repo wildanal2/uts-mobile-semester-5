@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/tweet_lay_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:cardPreventCornerOverlap="true"
+        app:cardElevation="3dp"
+        app:cardMaxElevation="10dp"
+        android:layout_marginTop="1px">
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_back_tweet"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="Tweet"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_below="@+id/tweet_lay_top"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/images_profil_tweet"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_named_tweet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/tv_uname_tweet"
+                    android:layout_below="@+id/tv_named_tweet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".@idkeren"/>
+
+                <Button
+                    android:id="@+id/collaps_btn_tweet"
+                    android:layout_width="15dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_collapse"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_status_tweet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Biaya transportasi dan logistik di Madura yang mahal membuat pulau itu kurang berkembang, angka kemiskinannya lebih tinggi dari daerah lain Jawa Timur."
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6:19 AM"
+                android:layout_marginRight="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tgl_tweet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="18 Oct 18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <Button
+                android:id="@+id/reply_btn_tweet"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:background="@drawable/ic_reply" />
+
+            <Button
+                android:id="@+id/retwett_btn_tweet"
+                android:layout_width="26dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/ic_retweet" />
+
+
+            <Button
+                android:id="@+id/loved_btn_tweet"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/ic_loved" />
+
+            <Button
+                android:id="@+id/shared_btn_tweet"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/ic_share" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:hint="Tweet your reply"/>
+</RelativeLayout>

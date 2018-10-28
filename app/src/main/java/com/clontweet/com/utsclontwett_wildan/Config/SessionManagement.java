@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.clontweet.com.utsclontwett_wildan.LoginActivity;
 import com.clontweet.com.utsclontwett_wildan.MainActivity;
 
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class SessionManagement {
      private static final String PREF_NAME = "SharedPrefLatihan";
      //Shared Preferences Keys
      private static final String IS_LOGIN = "IsLoggedIn";
-     public static final String KEY_EMAIL = "email";
+     public static final String KEY_EMAIL = "username";
      public static final String KEY_PASSWOrD = "pswd";
 
     public SessionManagement(Context mContext) {
@@ -68,8 +69,8 @@ public class SessionManagement {
     }
 
     public void logoutUser(){
+        mEditor.putBoolean(IS_LOGIN, false);
         mEditor.clear();
         mEditor.commit();
-
     }
 }

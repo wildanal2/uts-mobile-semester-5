@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ProfilActivity"></activity>
+        <activity android:name=".ProfilActivity" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".ProfilEditActivity"></activity>
     </application>
 
 </manifest>

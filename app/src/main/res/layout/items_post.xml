@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:id="@+id/post_main_lay"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imagess"
+            android:id="@+id/images_profil"
             android:layout_marginTop="5dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -33,72 +34,98 @@
 
             <RelativeLayout
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_named"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wildan_al"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_tglpost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:text="07 Oct 17" />
+                    <TextView
+                        android:id="@+id/tv_named"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:text="Wildan_al"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:textSize="14sp"
+                        android:text="*wildanAl2"/>
+
+                    <TextView
+                        android:id="@+id/tv_tglpost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="` 07 Oct 17" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/collaps_btn"
+                    android:layout_width="18dp"
+                    android:layout_height="17dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_collapse"/>
+
             </RelativeLayout>
 
             <TextView
-                android:layout_margin="8dp"
                 android:id="@+id/tv_status"
+                android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Welcome back to #TEI2018 @PeterStylesMLA
-                    As we examine @jokowi Global Maritime Fulcrum, @Menlu_RI #IndoPacific agenda, and role of China, US, Japan  India in geopolitics, linking north Australia through eastern Indonesia to Asia is more crucial in the coming yrs @fanniebay – "
+                android:text="Welcome back and role of China, US, Japan  India in geopolitics, linking north Australia through eastern Indonesia to Asia is more crucial in the coming yrs @fanniebay – "
                 />
 
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_margin="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/btn_comment"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:text="1"/>
-
-                <Button
-                    android:id="@+id/btn_retweet"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/btn_comment"
-                    android:text="2"/>
-                <Button
-                    android:id="@+id/btn_like"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/btn_retweet"
-                    android:text="3"/>
-                <Button
-                    android:id="@+id/btn_shared"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/btn_like"
-                    android:text="4"/>
-            </RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/post_main_lay"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <Button
+            android:id="@+id/reply_btn"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/ic_reply" />
+
+        <Button
+            android:id="@+id/retwett_btn"
+            android:layout_width="20dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/ic_retweet" />
+
+
+        <Button
+            android:id="@+id/loved_btn"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/ic_loved" />
+
+        <Button
+            android:id="@+id/shared_btn"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/ic_share" />
+    </LinearLayout>
+
 </RelativeLayout>
