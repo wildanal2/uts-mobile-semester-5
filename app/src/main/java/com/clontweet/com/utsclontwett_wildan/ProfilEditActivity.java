@@ -1,5 +1,6 @@
 package com.clontweet.com.utsclontwett_wildan;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -38,17 +39,21 @@ public class ProfilEditActivity extends AppCompatActivity {
 
         uname.setText(extra.getString("username"));
         email.setText(extra.getString("email"));
+        link.setText(extra.getString("img_profil"));
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase db = dbb.getWritableDatabase();
-                db.execSQL("update user set(email,img_profil) =('" +
-                        email.getText().toString() + "','" +
-                        link.getText().toString() + "') where username='"+uname.getText().toString()+"'");
+//                SQLiteDatabase db = dbb.getWritableDatabase();
+//                db.execSQL("update user set(email,img_profil) =('" +
+//                        email.getText().toString() + "','" +
+//                        link.getText().toString() + "') where username='"+uname.getText().toString()+"'");
+
+                dbb.updateuser(email.getText().toString(),link.getText().toString(),extra.getString("username"));
+
                 Toast.makeText(getApplicationContext(),"Sukses Update",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(),ProfilActivity.class);
-                startActivity(i);
+//                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+//                startActivity(i);
                 finish();
             }
         });

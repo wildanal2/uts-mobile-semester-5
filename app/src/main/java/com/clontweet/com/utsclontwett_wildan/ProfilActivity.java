@@ -47,12 +47,7 @@ public class ProfilActivity extends Activity {
 
 
         user = mSesion.getUserInformation();
-        Cusr = mDb.lihatUser(user.get("username"));
 
-        mtxNama.setText("@"+user.get("username"));
-        mtxuname.setText(Cusr.getString(Cusr.getColumnIndex("email")));
-
-        Glide.with(this).asBitmap().load(Cusr.getString(Cusr.getColumnIndex("img_profil"))).into(img_profil);
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +62,9 @@ public class ProfilActivity extends Activity {
                 Intent i = new Intent(getApplicationContext(),ProfilEditActivity.class);
                 i.putExtra("username",Cusr.getString(Cusr.getColumnIndex("username")));
                 i.putExtra("email",Cusr.getString(Cusr.getColumnIndex("email")));
+                i.putExtra("img_profil",Cusr.getString(Cusr.getColumnIndex("img_profil")));
                 startActivity(i);
-                finish();
+//                finish();
             }
         });
 
@@ -76,13 +72,19 @@ public class ProfilActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mSesion.logoutUser();
-                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                // Add new Flag to start new Activity
-//                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Cusr = mDb.lihatUser(user.get("username"));
+
+        mtxNama.setText("@"+user.get("username"));
+        mtxuname.setText(Cusr.getString(Cusr.getColumnIndex("email")));
+
+        Glide.with(this).asBitmap().load(Cusr.getString(Cusr.getColumnIndex("img_profil"))).into(img_profil);
     }
 }

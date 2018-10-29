@@ -107,6 +107,16 @@
             android:textColor="#000"
             android:textSize="20sp" />
 
+        <ImageView
+            android:id="@+id/img_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/img_border"
+            />
+
         <LinearLayout
             android:layout_margin="8dp"
             android:layout_width="match_parent"

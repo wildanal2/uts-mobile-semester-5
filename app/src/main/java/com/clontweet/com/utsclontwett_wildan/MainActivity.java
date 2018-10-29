@@ -60,7 +60,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(getApplicationContext(),"OnStrt goinggg ",Toast.LENGTH_SHORT).show();
+        if (!mSesion.isLoggedIn()){
+            Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
 
         Cusr = mDb.lihatUser(user.get("username"));
         Glide.with(this).asBitmap().load(Cusr.getString(Cusr.getColumnIndex("img_profil"))).into(img_profil);
@@ -68,14 +72,12 @@ public class MainActivity extends Activity {
 
     private void getImages(){
 
-        mPost.add(new Post("WildanAl2","02, Aug 18","Good Morning :D","https://pbs.twimg.com/profile_images/950559922051153921/Idi6wwNA_400x400.jpg"));
-        mPost.add(new Post("SavDp","22, Nov 18","Welcome back to #TEI2018 @PeterStylesMLA\n" +
-                "                    As we examine @jokowi Global Maritime Fulcrum","https://pbs.twimg.com/profile_images/681728290860609537/lAvQRQMI_400x400.jpg"));
-        mPost.add(new Post("Nova.bP","22, Oct 18","Laporan bertajuk \"Southeast Asian Tech Report\" mencantumkan delapan startup di Asia Tenggara yang menjadi unicorn: startup yang memiliki valuasi di atas USD1 miliar. ","https://pbs.twimg.com/profile_images/803070669353168898/JmbMlUbf_400x400.jpg"));
-        mPost.add(new Post("Rio_kr","18, Sep 18","Never Mind","https://pbs.twimg.com/profile_images/839298349148717056/yEE35xbx_400x400.jpg"));
-        mPost.add(new Post("jokowi","02, Aug 18","Jaket baru saya ini buatan Bandung, warna terakota, yang saya temukan di salah satu gerai pameran IdeaFest 2018 di Jakarta. Bisa jadi jas hujan, bisa dipakai juga kalau sedang tidak hujan.","https://pbs.twimg.com/profile_images/953822043211886592/IUEJdPg9_400x400.jpg"));
-        mPost.add(new Post("Nova.bP","22, Oct 18","Ini kalau nanyain kabar kapan pulang, sekangen itu kadang akutu sm mamakohh,  kyk sama temen, papa sm mama pun kyk temen juga,  pasangan idamanku pokoknya:'). ","https://pbs.twimg.com/profile_images/803070669353168898/JmbMlUbf_400x400.jpg"));
-
+        mPost.add(new Post("M. Wildan","WildanAl2","Good Morning :D","https://pbs.twimg.com/profile_images/950559922051153921/Idi6wwNA_400x400.jpg","","12:54 PM","02, Aug 18"));
+        mPost.add(new Post("Savita Dwi","SavDp","Huawei P20 Pro Vs Iphone XS Max Mantappp!!!!!","https://pbs.twimg.com/profile_images/1053919536867463168/50NXRxTV_400x400.jpg","https://pbs.twimg.com/media/DqVPL7BU8AAMfuW.jpg","07:49 AM","01, Mar 18"));
+        mPost.add(new Post("Donna","Nova.Bp","Laporan bertajuk \"Southeast Asian Tech Report\" mencantumkan delapan startup di Asia Tenggara yang menjadi unicorn: startup yang memiliki valuasi di atas USD1 miliar. ","https://pbs.twimg.com/profile_images/803070669353168898/JmbMlUbf_400x400.jpg","","10:50 AM","15, Sep 18"));
+        mPost.add(new Post("M.Rio","Rio_kr","Never Mind","https://pbs.twimg.com/profile_images/839298349148717056/yEE35xbx_400x400.jpg","","08:59 AM","01, Sep 18"));
+        mPost.add(new Post("Joko Widodo","jokowi","Beskap hitam bercorak emas dengan mahkota seolah raja,lalu diarak dengan kereta yang dihela dua ekor kuda. Tumben?","https://pbs.twimg.com/profile_images/953822043211886592/IUEJdPg9_400x400.jpg","https://pbs.twimg.com/media/DqpIrrsUUAAfY8l.jpg","08:40 PM","18, Sep 18"));
+        mPost.add(new Post("Gisella uci","GisellaCik","Ini kalau nanyain kabar kapan pulang, sekangen itu kadang akutu sm mamakohh,  kyk sama temen, papa sm mama pun kyk temen juga,  pasangan idamanku pokoknya:'). ","https://pbs.twimg.com/profile_images/1055839190212997121/h1eyNeKH_400x400.jpg","","11:49 AM","15, Aug 18"));
 
     }
 

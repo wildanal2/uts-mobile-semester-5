@@ -39,11 +39,14 @@ public class DataHelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    public  void  updateuser(String email,String Img,String username){
+    public  boolean   updateuser(String email,String Img,String username){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("insert into user(email,img_profil) values('" +
-                email + "','" +
-                Img + "') where username='"+username+"'");
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",email);
+        contentValues.put("img_profil",Img);
+        db.update("user", contentValues, "username = ?",new String[] { username });
+
+        return true;
     }
 
     public Cursor lihatUser(String Uname){
