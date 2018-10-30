@@ -52,14 +52,18 @@ public class LoginActivity extends Activity {
                 String uname = et_username.getText().toString();
                 String pwd = et_pwd.getText().toString();
 
-                if (db.cekLogin(uname,pwd)){
-                    Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_SHORT).show();
-                    mSesion.createLoginSession(uname,pwd);
-                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(i);
-                    finish();
+                if (!isValidPassword(pwd.trim())){
+                    et_pwd.setError("Password tidak valid");
                 }else {
-                    Toast.makeText(getApplicationContext(),"Anda belum terdaftar",Toast.LENGTH_SHORT).show();
+                    if (db.cekLogin(uname, pwd)) {
+                        Toast.makeText(getApplicationContext(), "Welcome " + uname, Toast.LENGTH_SHORT).show();
+                        mSesion.createLoginSession(uname, pwd);
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Anda belum terdaftar", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }
@@ -77,7 +81,7 @@ public class LoginActivity extends Activity {
 
     // validating password with retype password
     private boolean isValidPassword(String pass) {
-        if (!TextUtils.isEmpty(pass) && pass.length() > 6) {
+        if (!TextUtils.isEmpty(pass) && pass.length() > 3) {
             return true;
         }
         return false;

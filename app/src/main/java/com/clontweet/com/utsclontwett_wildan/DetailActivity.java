@@ -17,7 +17,7 @@ public class DetailActivity extends Activity {
 
     CircleImageView mImages;
     ImageView mimg_post;
-    TextView mtxNama,mtxUname,mtxStatus,mtxtgl;
+    TextView mtxNama,mtxUname,mtxStatus,mtxtgl,mtxjam;
     Button btn_back;
 
     @Override
@@ -34,6 +34,7 @@ public class DetailActivity extends Activity {
         mtxNama = findViewById(R.id.tv_named_tweet);
         mtxUname = findViewById(R.id.tv_uname_tweet);
         mtxtgl = findViewById(R.id.tv_tgl_tweet);
+        mtxjam = findViewById(R.id.tx_jam_detail);
         mimg_post = findViewById(R.id.img_upload);
 
         Glide.with(this).asBitmap().load(extra.getString("foto")).into(mImages);
@@ -48,6 +49,7 @@ public class DetailActivity extends Activity {
         mtxUname.setText("@"+extra.getString("username"));
         mtxStatus.setText(extra.getString("status"));
         mtxtgl.setText(extra.getString("tgl"));
+        mtxjam.setText(extra.getString("jam"));
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override

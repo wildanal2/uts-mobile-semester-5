@@ -106,7 +106,8 @@ public class MainActivity extends Activity {
     }
 
     private void getImages(){
-
+        mPost.add(new Post("Agnes Mo","agnezmo","Ketika fans bikin hashtag, dan saya sendiri ga tau ada apaan... \uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02 \uD83D\uDE18\uD83D\uDE18\uD83D\uDE18 \uD83D\uDE02 omg.","https://pbs.twimg.com/profile_images/1024094642608861184/CpnYQOep_400x400.jpg","","11:38 AM","20 Oct 18"));
+        mPost.add(new Post("Joko Widodo","jokowi","Di antara keluarga korban musibah jatuhnya pesawat Lion Air JT-610, saya ikut merasakan duka yang amat dalam.","https://pbs.twimg.com/profile_images/953822043211886592/IUEJdPg9_400x400.jpg","https://pbs.twimg.com/media/DquYH3pU8AAyS3t.jpg","09:43 AM","20 Oct 18"));
         mPost.add(new Post("M. Wildan","WildanAl2","Good Morning :D","https://pbs.twimg.com/profile_images/950559922051153921/Idi6wwNA_400x400.jpg","","12:54 PM","02, Aug 18"));
         mPost.add(new Post("Savita Dwi","SavDp","Huawei P20 Pro Vs Iphone XS Max Mantappp!!!!!","https://pbs.twimg.com/profile_images/1053919536867463168/50NXRxTV_400x400.jpg","https://pbs.twimg.com/media/DqVPL7BU8AAMfuW.jpg","07:49 AM","01, Mar 18"));
         mPost.add(new Post("Donna","Nova.Bp","Laporan bertajuk \"Southeast Asian Tech Report\" mencantumkan delapan startup di Asia Tenggara yang menjadi unicorn: startup yang memiliki valuasi di atas USD1 miliar. ","https://pbs.twimg.com/profile_images/803070669353168898/JmbMlUbf_400x400.jpg","","10:50 AM","15, Sep 18"));

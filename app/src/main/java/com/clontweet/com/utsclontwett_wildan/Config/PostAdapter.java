@@ -68,6 +68,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
                         i.putExtra("nama",mPo.getNama());
                         i.putExtra("username",mPo.getUname());
                         i.putExtra("tgl",mPo.getTgl());
+                        i.putExtra("jam",mPo.getJam());
                         i.putExtra("status",mPo.getStatus());
                         mContext.startActivity(i);
                     }
