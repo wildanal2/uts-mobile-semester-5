@@ -2,7 +2,9 @@ package com.clontweet.com.utsclontwett_wildan;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -14,6 +16,8 @@ import com.clontweet.com.utsclontwett_wildan.Config.DataHelper;
 import com.clontweet.com.utsclontwett_wildan.Config.SessionManagement;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginActivity extends Activity {
 
@@ -57,6 +61,7 @@ public class LoginActivity extends Activity {
                 }else {
                     Toast.makeText(getApplicationContext(),"Anda belum terdaftar",Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
@@ -69,4 +74,13 @@ public class LoginActivity extends Activity {
         });
 
     }
+
+    // validating password with retype password
+    private boolean isValidPassword(String pass) {
+        if (!TextUtils.isEmpty(pass) && pass.length() > 6) {
+            return true;
+        }
+        return false;
+    }
+
 }

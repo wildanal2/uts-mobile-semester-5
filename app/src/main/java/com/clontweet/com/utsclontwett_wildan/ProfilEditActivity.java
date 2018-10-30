@@ -36,6 +36,7 @@ public class ProfilEditActivity extends AppCompatActivity {
         link = findViewById(R.id.et_link);
         img = findViewById(R.id.img_ck);
         btn_update = findViewById(R.id.btnUpdate);
+        btn_back = findViewById(R.id.btn_back);
 
         uname.setText(extra.getString("username"));
         email.setText(extra.getString("email"));
@@ -44,16 +45,8 @@ public class ProfilEditActivity extends AppCompatActivity {
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                SQLiteDatabase db = dbb.getWritableDatabase();
-//                db.execSQL("update user set(email,img_profil) =('" +
-//                        email.getText().toString() + "','" +
-//                        link.getText().toString() + "') where username='"+uname.getText().toString()+"'");
-
                 dbb.updateuser(email.getText().toString(),link.getText().toString(),extra.getString("username"));
-
                 Toast.makeText(getApplicationContext(),"Sukses Update",Toast.LENGTH_SHORT).show();
-//                Intent i = new Intent(getApplicationContext(),MainActivity.class);
-//                startActivity(i);
                 finish();
             }
         });
@@ -62,6 +55,13 @@ public class ProfilEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Glide.with(getApplicationContext()).asBitmap().load(link.getText().toString()).into(img);
+            }
+        });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

@@ -54,11 +54,11 @@
 
     </RelativeLayout>
     <LinearLayout
+        android:id="@+id/lay_biodata_mid"
         android:layout_below="@+id/lay_fotoprofil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="2dp"
         android:orientation="vertical">
 
         <TextView
@@ -76,9 +76,41 @@
             android:layout_height="wrap_content"
             android:text=".@wildanal" />
 
+        <TextView
+            android:id="@+id/tx_status_bio"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Write your status in here."/>
 
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_location"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jombang, Jawa timur"/>
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_event"/>
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Joined Oct 2018"/>
+
+        </LinearLayout>
         <RelativeLayout
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -117,14 +149,86 @@
 
             <Button
                 android:id="@+id/btn_logout_profil"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/ic_logout"/>
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_outline"
+                android:drawableLeft="@drawable/btn_logoutt"
+                android:paddingLeft="13dp"
+                android:text="Logout"
+                android:textAllCaps="false" />
         </RelativeLayout>
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lay_button"
+        android:layout_below="@+id/lay_biodata_mid"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:weightSum="4">
 
+        <Button
+            android:id="@+id/btn_my_tweet"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/transparent"
+            android:text="Tweets"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_my_tweetreply"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/transparent"
+            android:text="Reply"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_my_media"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:text="Media"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_my_likes"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/transparent"
+            android:text="Likes"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lay_button">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_compose"
+            android:scaleType="centerCrop"
+            />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>
